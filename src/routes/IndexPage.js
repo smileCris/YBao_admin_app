@@ -132,18 +132,18 @@ class IndexPage extends React.Component {
               <Diary />
             </TabBar.Item>
             <TabBar.Item
-              icon={<img src={questionGrey} alt="questionGrey" width="22" height="22" />}
-              selectedIcon={<img src={questionPink} alt="questionPink" width="22" height="22" />}
-              title="问答"
-              key="question"
-              selected={this.state.selectedTab === 'redTab'}
+              icon={<img src={storyGrey} alt="storyGrey" width="22" height="22" />}
+              selectedIcon={<img src={storyPink} alt="storyPink" width="22" height="22" />}
+              title="故事"
+              key="story"
+              selected={this.state.selectedTab === 'yellowTab'}
               onPress={() => {
                 this.setState({
-                  selectedTab: 'redTab',
+                  selectedTab: 'yellowTab',
                 })
               }}
             >
-              <Question />
+              <Story />
             </TabBar.Item>
             <TabBar.Item
               icon={<img src={circleGrey} alt="circleGrey" width="22" height="22" />}
@@ -160,18 +160,18 @@ class IndexPage extends React.Component {
               <Circle />
             </TabBar.Item>
             <TabBar.Item
-              icon={<img src={storyGrey} alt="storyGrey" width="22" height="22" />}
-              selectedIcon={<img src={storyPink} alt="storyPink" width="22" height="22" />}
-              title="故事"
-              key="story"
-              selected={this.state.selectedTab === 'yellowTab'}
+              icon={<img src={questionGrey} alt="questionGrey" width="22" height="22" />}
+              selectedIcon={<img src={questionPink} alt="questionPink" width="22" height="22" />}
+              title="问答"
+              key="question"
+              selected={this.state.selectedTab === 'redTab'}
               onPress={() => {
                 this.setState({
-                  selectedTab: 'yellowTab',
+                  selectedTab: 'redTab',
                 })
               }}
             >
-              <Story />
+              <Question />
             </TabBar.Item>
             <TabBar.Item
               icon={<img src={myGrey} alt="myGrey" width="22" height="22" />}
