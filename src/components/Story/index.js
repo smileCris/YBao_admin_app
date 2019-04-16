@@ -12,6 +12,15 @@ class Story extends Component {
           <div className={styles.card}>
             <img src={storyImg} />
             <div className={styles.title}>小猫钓鱼</div>
+            <div class='desc'>
+              <div class='listen'>
+                <image src='../../assets/img/listen.png' />
+                <div></div>
+              </div>
+              <button class='share' open-type="share">
+                <image src='../../assets/img/share.png' />
+              </button>
+            </div>
           </div>
           <WhiteSpace size="lg" />
         </WingBlank>

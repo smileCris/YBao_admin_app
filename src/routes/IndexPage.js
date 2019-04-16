@@ -1,13 +1,13 @@
 import React from 'react'
 import { TabBar, NavBar, Icon, Popover, Drawer, List } from 'antd-mobile'
-import Diary from '../components/Diary'
+// import Diary from '../components/Diary'
 import Question from '../components/Question'
 import Circle from '../components/Circle'
 import Story from '../components/Story'
 import My from '../components/My'
 import styles from './IndexPage.less'
-import diaryGrey from '../assets/icon/diary-grey.png'
-import diaryPink from '../assets/icon/diary-pink.png'
+// import diaryGrey from '../assets/icon/diary-grey.png'
+// import diaryPink from '../assets/icon/diary-pink.png'
 import questionGrey from '../assets/icon/question-grey.png'
 import questionPink from '../assets/icon/question-pink.png'
 import circleGrey from '../assets/icon/circle-grey.png'
@@ -23,14 +23,13 @@ class IndexPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedTab: 'blueTab',
+      selectedTab: 'story',
       visible: false,
       selected: '',
       open: false,
     }
   }
   onOpenChange = (...args) => {
-    console.log(args);
     this.setState({ open: !this.state.open });
   }
   onSelect = (opt) => {
@@ -47,15 +46,20 @@ class IndexPage extends React.Component {
   }
   render() {
     const sidebar = (<List className={styles.sidebar}>
-      <List.Item key="diary"
+      {/* <List.Item key="diary"
         thumb={
           <img src={diaryGrey} alt="diaryGrey" width="22" height="22" />
         }
-      >亲子日记</List.Item>
+      >亲子日记</List.Item> */}
       <List.Item key="question"
         thumb={
           <img src={questionGrey} alt="questionGrey" width="22" height="22" />
         }
+        onClick={() => {
+          this.setState({
+            selectedTab: 'story',
+          })
+        }}
       >育儿问答</List.Item>
       <List.Item key="circle"
         thumb={
@@ -110,14 +114,14 @@ class IndexPage extends React.Component {
           onOpenChange={this.onOpenChange}
         >
           点击左侧按钮
-          </Drawer>
+        </Drawer>
         <div className={styles.tabBar}>
           <TabBar
             unselectedTintColor="#515151"
             tintColor="#f46e66"
             barTintColor="white"
           >
-            <TabBar.Item
+            {/* <TabBar.Item
               title="记录"
               key="diary"
               icon={<img src={diaryGrey} alt="diaryGrey" width="22" height="22" />}
@@ -130,16 +134,16 @@ class IndexPage extends React.Component {
               }}
             >
               <Diary />
-            </TabBar.Item>
+            </TabBar.Item> */}
             <TabBar.Item
               icon={<img src={storyGrey} alt="storyGrey" width="22" height="22" />}
               selectedIcon={<img src={storyPink} alt="storyPink" width="22" height="22" />}
               title="故事"
               key="story"
-              selected={this.state.selectedTab === 'yellowTab'}
+              selected={this.state.selectedTab === 'story'}
               onPress={() => {
                 this.setState({
-                  selectedTab: 'yellowTab',
+                  selectedTab: 'story',
                 })
               }}
             >
@@ -150,10 +154,10 @@ class IndexPage extends React.Component {
               selectedIcon={<img src={circlePink} alt="circlePink" width="22" height="22" />}
               title="圈子"
               key="circle"
-              selected={this.state.selectedTab === 'greenTab'}
+              selected={this.state.selectedTab === 'circle'}
               onPress={() => {
                 this.setState({
-                  selectedTab: 'greenTab',
+                  selectedTab: 'circle',
                 })
               }}
             >
@@ -164,10 +168,10 @@ class IndexPage extends React.Component {
               selectedIcon={<img src={questionPink} alt="questionPink" width="22" height="22" />}
               title="问答"
               key="question"
-              selected={this.state.selectedTab === 'redTab'}
+              selected={this.state.selectedTab === 'question'}
               onPress={() => {
                 this.setState({
-                  selectedTab: 'redTab',
+                  selectedTab: 'question',
                 })
               }}
             >
@@ -178,10 +182,10 @@ class IndexPage extends React.Component {
               selectedIcon={<img src={myPink} alt="myPink" width="22" height="22" />}
               title="我的"
               key="my"
-              selected={this.state.selectedTab === 'pinkTab'}
+              selected={this.state.selectedTab === 'my'}
               onPress={() => {
                 this.setState({
-                  selectedTab: 'pinkTab',
+                  selectedTab: 'my',
                 })
               }}
             >
