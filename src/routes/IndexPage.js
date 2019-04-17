@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'dva'
 import { TabBar, NavBar, Icon, Popover, Drawer, List } from 'antd-mobile'
 // import Diary from '../components/Diary'
 import Question from '../components/Question'
@@ -198,4 +199,4 @@ class IndexPage extends React.Component {
   }
 }
 
-export default IndexPage
+export default connect(({ main }) => ({ main }))(IndexPage)
