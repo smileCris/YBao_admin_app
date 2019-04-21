@@ -52,30 +52,45 @@ class IndexPage extends React.Component {
           <img src={diaryGrey} alt="diaryGrey" width="22" height="22" />
         }
       >亲子日记</List.Item> */}
-      <List.Item key="question"
+      <List.Item key="story"
         thumb={
-          <img src={questionGrey} alt="questionGrey" width="22" height="22" />
+          <img src={storyGrey} alt="storyGrey" width="22" height="22" />
         }
         onClick={() => {
           this.setState({
             selectedTab: 'story',
           })
         }}
-      >育儿问答</List.Item>
+      >睡前故事</List.Item>
       <List.Item key="circle"
         thumb={
           <img src={circleGrey} alt="circleGrey" width="22" height="22" />
         }
+        onClick={() => {
+          this.setState({
+            selectedTab: 'circle',
+          })
+        }}
       >妈妈圈</List.Item>
-      <List.Item key="story"
+      <List.Item key="question"
         thumb={
-          <img src={storyGrey} alt="storyGrey" width="22" height="22" />
+          <img src={questionGrey} alt="questionGrey" width="22" height="22" />
         }
-      >睡前故事</List.Item>
+        onClick={() => {
+          this.setState({
+            selectedTab: 'question',
+          })
+        }}
+      >育儿问答</List.Item>
       <List.Item key="my"
         thumb={
           <img src={myGrey} alt="myGrey" width="22" height="22" />
         }
+        onClick={() => {
+          this.setState({
+            selectedTab: 'my',
+          })
+        }}
       >个人中心</List.Item>
     </List>)
     return (
